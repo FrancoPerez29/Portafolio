@@ -4,7 +4,7 @@ class Interfaz:
     def __init__(self, ventana):
         self.ventana=ventana
         self.ventana.title("Calculadora")
-        self.pantalla=Text(ventana,state="disabled",width=38,height=3,background="blue",foreground="black",font=("Helvetica",15))
+        self.pantalla=Text(ventana,state="disabled",width=38,height=3,background="black",foreground="white",font=("Helvetica",15))
         self.pantalla.grid(row=0,column=0,columnspan=6,padx=10,pady=5)
         self.operacion=""
         boton1=self.crearBoton(7)
