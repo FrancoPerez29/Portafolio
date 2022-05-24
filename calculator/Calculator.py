@@ -2,6 +2,11 @@ from tkinter import Tk, Text,Button,END, re
 
 class Interfaz:
     def __init__(self, ventana):
+        """
+        It creates a calculator.
+        
+        :param ventana: The window that the calculator will be in
+        """
         self.ventana=ventana
         self.ventana.title("Calculadora")
         self.pantalla=Text(ventana,state="disabled",width=38,height=3,background="black",foreground="white",font=("Helvetica",15))
@@ -33,8 +38,30 @@ class Interfaz:
         botones[16].grid(row=5,column=0,columnspan=4)
         return
     def crearBoton(self,valor,escribir=True,ancho=9,alto=1):
+        """
+        It creates a button with the text "valor" and the width and height of "ancho" and "alto"
+        respectively, and when it's clicked, it calls the function "click" with the parameters "valor"
+        and "escribir"
+        
+        :param valor: The text that will be displayed on the button
+        :param escribir: If True, the value of the button will be written to the screen, defaults to
+        True (optional)
+        :param ancho: width, defaults to 9 (optional)
+        :param alto: height, defaults to 1 (optional)
+        :return: A Button object.
+        """
         return Button(self.ventana, text=valor, width=ancho, height=alto, font=("Helvetica",15), command=lambda: self.click(valor,escribir))
     def click(self,texto,escribir):
+        """
+        It takes the text from the button and if it's not an operator, it will show it on the screen. If
+        it is an operator, it will do the operation and show the result on the screen
+        
+        :param texto: The text that is displayed on the button
+        :param escribir: Boolean value that indicates whether the text should be written to the screen
+        or not
+        :return: The return value is the value of the last expression evaluated, or None if no
+        expression was evaluated.
+        """
         if not escribir:
             if texto=="=" and self.operacion!="":
                 self.operacion=re.sub(u"\u00F7", "/", self.operacion)
@@ -50,11 +77,22 @@ class Interfaz:
             self.mostrarEnPantalla(texto)
         return
     def limpiarPantalla(self):
+        """
+        It clears the text in the textbox.
+        :return: The return statement is used to exit a function and go back to the place from where it
+        was called.
+        """
         self.pantalla.configure(state="normal")
         self.pantalla.delete("1.0",END)
         self.pantalla.configure(state="disabled")
         return
     def mostrarEnPantalla(self,valor):
+        """
+        It takes a value, inserts it into the text box, and then disables the text box.
+        
+        :param valor: The value to be displayed on the screen
+        :return: Nothing.
+        """
         self.pantalla.configure(state="normal")
         self.pantalla.insert(END, valor)
         self.pantalla.configure(state="disabled")

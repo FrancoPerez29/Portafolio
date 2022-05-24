@@ -7,6 +7,9 @@ ventana.geometry("1900x450+10+10")
 ventana.minsize(width=250, height=200)
 
 def Reloj_Digital():
+    """
+    It takes the current time, formats it, and then displays it in the label
+    """
     hora = time.strftime("%H:%M:%S")
     Reloj.config(text=hora,font=("Courier", 295, "italic"), fg="white", bg="black",)    
     Reloj.after(200, Reloj_Digital)

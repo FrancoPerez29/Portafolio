@@ -1,6 +1,15 @@
 import cv2
 
 def faciales(detected,image,color: tuple):
+    """
+    It takes a list of detected faces, an image, and a color, and draws a rectangle around each face in
+    the image
+    
+    :param detected: The list of faces detected by the Haar Cascade
+    :param image: The image to draw the rectangle on
+    :param color: tuple
+    :type color: tuple
+    """
     for (x,y,width,height) in detected:
         cv2.rectangle(
             image,
@@ -15,6 +24,8 @@ cara =cv2.CascadeClassifier(cv2.data.haarcascades +'haarcascade_frontalface_defa
 ojo = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_eye_tree_eyeglasses.xml")
 
 
+# A loop that reads the image from the camera, converts it to gray scale, detects the faces and eyes,
+# and draws a rectangle around them.
 while True:
     _, img = cap.read()
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)

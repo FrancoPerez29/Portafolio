@@ -5,6 +5,7 @@ turtle.speed(0)
 
 
 
+# Drawing a circle with different colors.
 for i in range(20):
     for colores in ("red","blue","green","purple","yellow","grey","orange","white","pink" ):
         turtle.color(colores)
