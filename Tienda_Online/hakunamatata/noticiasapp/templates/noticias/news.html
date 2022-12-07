@@ -1,0 +1,32 @@
+{% extends "hakunamatataapp/base.html" %}
+
+{%load static%}
+
+{% block content %}
+<body>
+    <div class="page-container">
+        <div class="content-page cover-background font-content-news">
+            <div class="jumbotron">
+              <h1 class="tittles-pages">Noticias HakunaMatataHogar</h1>
+              <p>En esta seccion podras encontrar todas las novedades, ofertas y todas las marcas nuevas que traeremos
+              </p>
+            </div>
+            {% for post in posts %}
+            <section class="all-news-contents section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-8 col-sm-push-4">
+                            <h2 class="tittles-pages text-center">{{post.titulo}}</h2>
+                            <p class="lead">{{post.contenido}}</p>
+                        </div>
+                        <div class="col-xs-12 col-sm-4 col-sm-pull-8">
+                            <img src="{{post.imagen.url}}" alt="" class="img-responsive img-rounded center-box-content">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+{% endblock %}

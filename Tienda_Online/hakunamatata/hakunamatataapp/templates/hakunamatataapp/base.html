@@ -1,0 +1,90 @@
+<html lang="es">
+
+<head>
+
+    {% load static %}
+
+	
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Inicio</title>
+	<link rel="stylesheet" href="{% static 'hakunamatataapp/css/normalize.css' %}">
+	<link rel="stylesheet" href="{% static 'hakunamatataapp/css/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static 'hakunamatataapp/css/font-awesome.min.css' %}">
+	<link rel="stylesheet" href="{% static 'hakunamatataapp/css/style.css' %}">
+	<link rel="Shortcut Icon" type="/image/x-icon" href="assets/icons/shortcut-icon.ico" />
+	<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="js/jquery-1.11.2.min.js"><\/script>')</script>
+	<script src="{% static 'hakunamatataapp/js/modernizr.js'%}"></script>
+	<script src="{% static 'hakunamatataapp/js/main.js'%}"></script>
+	<script src="{% static 'hakunamatataapp/js/bootstrap.min.js' %}"></script>
+	
+
+	<nav class="full-reset nav-phonestore" style="margin: auto;">
+		<div class="logo tittles-pages" href="{% url 'Inicio' %}">
+			 HakunaMatataHogar 
+		</div>
+		 <ul class="list-unstyled full-reset navigation-list" style="margin: auto;">
+			 <li><a href="{% url 'Inicio' %}">Inicio</a></li>
+			 <li><a href="{% url 'Tienda' %}">Tienda</a></li>
+			 <li><a href="{% url 'News' %}">Noticias</a></li>
+			 <li><a href="{% url 'Servicios' %}">Servicios</a></li>
+			 <li><a href="{% url 'Contacto' %}">Contactenos</a></li>
+		 </ul>
+		 
+		 <i class="fa fa-bars visible-xs btn-mobile"></i>
+	 </nav>
+</head>
+	
+<!--contenido cambiante-->
+{% block content %}
+
+
+{% endblock %}
+
+{% load static %}
+<body class="page-container">
+	<footer class="footer">
+		<div class="container-fluid">
+			<div class="col-xs-12 text-center">
+				<h3>Siguenos en</h3>
+				<ul class="list-unstyled list-social-icons">
+					
+					<li>
+						<a href="hakunamatatahogar.ok@gmail.com">
+							<i class="fa fa-google-plus" style="background-color: #DD4B39;"></i>
+						</a>
+					</li>
+					<li>
+						<a href="https://api.whatsapp.com/send?phone=3518033248&text=Hola,%20en%20que%20puedo%20ayudarte.">
+							<i class="fa fa-WhatsApp" style="background-color: #008000; text-align: center;"></i>
+						</a>
+					</li>
+					<li>
+						<a href="https://treinta.shop/hakunamatatahogar">
+							<i class="fa fa-treinta" style="background-color: green;"></i> 
+						</a>
+					</li>
+					<li>
+						<a href="https://instagram.com/hakuna.matata.hogar?igshid=YmMyMTA2M2Y=">
+							<i class="fa fa-Instagram" style="background-color: #d331bd;"></i>
+						</a>
+					</li>
+				</ul>
+				<h4>HakunaMatataHogar &copy; 2022</h4>
+			</div>
+		</div>
+	</footer>
+</body>	
+</html>
+<!--<ul class="list-unstyled full-reset navigation-list" style="margin: auto;">
+			<li style="color: white;">
+				{% if user.is_authenticated %}
+					Hola {{ user.username}} &nbsp;&nbsp;<a href="{%url 'cerrar_sesion' %}"> Cerrar Session</a>
+				{% else %}
+				<a href="{% url 'login' %}">Login</a>&nbsp;&nbsp;
+				<a href="{% url 'autenticacion' %}">Registrate</a> 
+				{% endif %}
+			</li>
+	</ul>-->

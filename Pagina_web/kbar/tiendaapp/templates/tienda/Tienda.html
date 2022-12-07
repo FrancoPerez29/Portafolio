@@ -1,0 +1,32 @@
+{% extends "bolicheapp/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+  <div class="row">
+
+{% for Producto in productos %}
+
+    <div class="col-4">
+
+    <div class="card" style="width: 100%; margin: 50px;">
+
+        <img src="{{Producto.imagen.url}}" class="card-img-top">
+        <div class="card-body" style="text-align: center;">
+
+          <h6 class="card-title">{{Producto.nombre}}</h6>
+          <p class="card-text">$&nbsp;{{Producto.precio}}</p>
+
+        </div>
+
+    </div>
+
+  </div>
+
+{% endfor %}
+
+  </div>
+</div>
+{% endblock %}

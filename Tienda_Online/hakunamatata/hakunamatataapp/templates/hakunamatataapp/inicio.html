@@ -1,0 +1,64 @@
+{% extends "hakunamatataapp/base.html" %}
+
+{%load static%}
+
+
+
+{% block content %}
+
+<body>
+    <div class="page-container">
+        <div class="content-page cover-background font-content-index">
+            <div class="jumbotron">
+                <div class="iniciar-sesion"style="color: white; text-align: right;">
+                    {% if user.is_authenticated %}
+                    Hola {{ user.username}} &nbsp;&nbsp; <br><br><a href="{%url 'cerrar_sesion' %}" style="color: white;"> Cerrar Session</a>
+                    {% else %}
+                <a href="{% url 'login' %}" style="color: white;">Login</a>&nbsp;&nbsp;<a href="{% url 'autenticacion' %}" style="color: white;">Registrate</a> 
+                    {% endif %}
+                </div>
+              <h1 class="tittles-pages">Bienvenido a HakunaMatataHogar </h1>
+              <p>Encontrá todo lo que estás buscando, Porque la belleza está en los detalles y tenemos todo para el hogar, haciendo tu vida más bella.
+              </p>
+            </div>
+            <section class="OS-phones section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 text-center">
+                            <p class="tittles-pages">Marcas de nuestros Productos</p>
+                            <br><br><br>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-4">
+                            <div class="content-dest">
+                                <p style="font-size: 90px; text-align: center;"><i class=""></i></p>
+                                <h3 class="text-center">Discovery Adventure</h3>
+                                <p class="text-justify">Discovery Channel ha venido explorando las maravillas del mundo. Inspirados en la curiosidad, Discovery Adventures es parte de la experiencia de hacer tus viajes divertidos y memorables, sin importar lo grande o pequeño que sea. Traemos la linea completa de productos outdoor de Discovery Adventures con lo último en tecnología, diseño y calidad para los amantes incondicionales de la vida al aire libre, del camping, la montaña o el senderismo. Descubrí nuestros productos y embarcate en tu próxima aventura.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-4">
+                            <div class="content-dest">
+                                <p style="font-size: 90px; text-align: center;"><i class=""></i></p>
+                                <h3 class="text-center">Tramontina</h3>
+                                <p class="text-justify">Tramontina es más que una marca, es símbolo de tradición, esfuerzo y responsabilidad. Presente en más de 120 países, nos preocupamos en ofrecer productos con la más alta calidad en el mercado, siempre con responsabilidad ambiental. La innovación, el diseño, la tecnología y, sobre todo, el capital humano marcan la construcción de esta empresa. Es así que producimos más de 18 mil artículos, entre ellos utensilios y equipos para cocina, electrodomésticos, herramientas para agricultura, jardinería, mantenimiento industrial y automotriz, construcción civil, materiales eléctricos y muebles de madera y plástico.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-4">
+                            <div class="content-dest">
+                                <p style="font-size: 90px; text-align: center;"><i class=""></i></p>
+                                <h3 class="text-center">Las Oreiro</h3>
+                                <p class="text-justify">La intención de Las Oreiro fue equiparar su propio ADN con el de la mujer que mejor representaba las virtudes del género. En esa búsqueda histórica, se destacó como ícono absoluto de la esencia de la mujer que representa la marca, la emblemática pin up girl surgida en Estados Unidos a mediados de la década del cuarenta. Esa chica de calendario que supo darle a la sociedad aquello que le estaba faltando, una actitud desafiante que hiciera de cada detalle un acontecimiento relevante, cambiando así el paisaje de la cultura popular reinante, creando un nuevo espacio en donde pudiese desarrollar y explotar sus encantos naturales.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+
+{% endblock %}
